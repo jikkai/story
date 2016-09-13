@@ -1,0 +1,6 @@
+{
+  "presets": ["es2016-node5", "stage-3"],
+  "plugins": ["babel-polyfill"],
+  "sourceMaps": true,
+  "retainLines": true
+}
