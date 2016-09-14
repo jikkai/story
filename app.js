@@ -1,8 +1,12 @@
-const Koa = require('koa');
-const app = new Koa();
+import Koa from 'koa'
+import views from 'koa-views'
+import bodyparser from 'koa-bodyparser'
+import logger from 'koa-logger'
 
-app.use(ctx => {
-  ctx.body = 'Hello Koa'
-})
+const app = new Koa()
 
-app.listen(3000, () => console.log('http://localhost:3000'))
+app
+  .use(bodyparser())
+  .use(logger())
+
+app.listen(9999, () => console.log('http://localhost:9999'))
