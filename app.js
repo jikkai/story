@@ -9,4 +9,16 @@ app
   .use(bodyparser())
   .use(logger())
 
+app.use(views(__dirname + '/views', {
+  map: {
+    html: 'dustjs-linkedin'
+  }
+}))
+
+app.use(views(__dirname, { extension: 'dust' }))
+
+app.use(async (ctx) => {
+  await ctx.render('index.dust')
+})
+
 app.listen(9999, () => console.log('http://localhost:9999'))
