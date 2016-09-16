@@ -1,10 +1,5 @@
-extern crate iron;
-
-use iron::prelude::*;
-use iron::status;
+extern crate story;
 
 fn main() {
-  Iron::new(|_: &mut Request| {
-    Ok(Response::with((status::Ok, "Hello World!")))
-  }).http("localhost:3000").unwrap();
+  story::server::server();
 }
