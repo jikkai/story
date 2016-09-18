@@ -21,7 +21,8 @@ pub fn server() {
 	hbse.reload().unwrap();
 
 	let mut router = Router::new();
-	router.get("/", routers::home::home);
+	router.get("/", routers::home::home, "home");
+	router.get("/post/:id", routers::post::post, "post");
 
 	let mut mount = Mount::new();
 	mount.mount("/", router);
