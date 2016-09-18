@@ -1,0 +1,179 @@
+body {
+	font-family: 'Fira Sans';
+}
+
+ul {
+	list-style: none;
+}
+
+li, p {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+li::before {
+	content: '- ';
+}
+
+code {
+	font-size: 1.4em;
+	color: rgb(39, 39, 39);
+	background: rgb(237, 234, 234) none repeat scroll 0% 0%;
+	padding: 3px 1px;
+	border-radius: 3px;
+}
+
+img {
+	max-height: 100%;
+	width: auto;
+}
+
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: -600px 0; }
+    100% { background-position: 0 0; }
+}
+
+.home-img-back {
+	background-image: url('/static/rustacean.png');
+	background-position: 0px 0px;
+	background-size: contain;
+
+	width: 100%;
+	height: 15%;
+
+	animation: animatedBackground 15s linear infinite;
+}
+
+.home-img-mid {
+	background-image: url('/static/rustacean.png');
+	background-position: 0px 0px;
+	background-size: contain;
+
+	width: 100%;
+	height: 35%;
+
+	animation: animatedBackground 10s linear infinite;
+}
+
+.home-img-front {
+	background-image: url('/static/rustacean.png');
+	background-position: 0px 0px;
+	background-size: contain;
+
+	width: 100%;
+	height: 50%;
+
+	animation: animatedBackground 5s linear infinite;
+}
+
+.happy-crab {
+	background-image: url('/static/rustacean.png');
+	background-position: 0px 4px;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	height: 50px;
+	width: 50px;
+	display: block;
+	float: left;
+
+	margin-right: 10px;
+}
+
+.heading {
+	height: 5%;
+	margin: 2%;
+}
+
+.body {
+	width: 92%;
+	height: 85%;
+	margin: 0 4%;
+	overflow: hidden;
+}
+
+.body-content {
+	width: 92%;
+	height: 15%;
+	margin: 0 4%;
+}
+
+.body-sample {
+	width: 96%;
+	height: 70%;
+	margin: 0% 2%;
+	border: none;
+}
+
+.body-img {
+	height: 85%;
+	width: auto;
+	margin: auto;
+	display: block;
+}
+
+.next, .back {
+	color: #ccc;
+	cursor: pointer;
+	margin: 0 20px;
+}
+
+.left {
+	width: 68%;
+	float: left;
+}
+
+.right {
+	max-width: 25%;
+	float: right;
+}
+
+.big {
+	font-size: 2em;
+}
+
+.quote {
+	font-style: italic;
+	position: relative;
+}
+
+.quote::before {
+	content: '“';
+	left: -30px;
+	font-size: 2em;
+	top: -14px;
+}
+
+.quote::after {
+	content: '”';
+}
+
+.quote::before,
+.quote::after {
+	color: #ccc;
+	position: absolute;
+}
+
+.quote-src {
+	color: #999;
+	font-size: 1.5em;
+	font-style: italic;
+	text-align: right;
+	margin-right: 10%;
+}
+
+.quote-src::before {
+	content: '— ';
+}
+
+img.fill {
+	width: 100%;
+}
+
+.caption {
+	position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 98%;
+}
