@@ -1,20 +1,15 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="renderer" content="webkit">
+{{> partial/head}}
 
-    <title>Story</title>
-  </head>
-  <body>
-    {{#each list}}
-        <li>
-          <a href="/posts/{{this}}">
-            {{{this}}}
-          </a>
-        </li>
-    {{/each}}
-  </body>
-</html>
+  <main class="e-main">
+    <ul class="e-home-list">
+      {{#each list}}
+          <li>
+            <a href="/posts/{{this}}">
+              {{{this}}}
+            </a>
+          </li>
+      {{/each}}
+    </ul>
+  </main>
+
+{{> partial/footer}}
