@@ -1,17 +1,18 @@
 extern crate iron;
 extern crate router;
+extern crate url;
 extern crate hoedown;
 extern crate rustc_serialize as rss;
 extern crate handlebars_iron as hbs;
 
 use std::collections::BTreeMap;
-
 use std::io::prelude::*;
 use std::fs::{ File };
 
 use self::iron::prelude::*;
 use self::iron::status;
 use self::router::Router;
+use self::url::percent_encoding::percent_decode;
 use self::hoedown::{ Markdown, Render };
 use self::hoedown::renderer::html::{ self, Html };
 use self::rss::json::{ ToJson, Json };
@@ -33,11 +34,10 @@ impl ToJson for Post {
 
 pub fn post(req: &mut Request) -> IronResult<Response> {
 	let id = req.extensions.get::<Router>().unwrap().find("id").unwrap_or("/");
+	let title = percent_decode(id.as_bytes()).decode_utf8().unwrap();
 
 	// 读取markdown文件
-	let suffix = ".md".to_string();
-	let file_name = id.to_string() + &suffix;
-	let mut file = File::open("./src/posts/".to_string() + &file_name).unwrap();
+	let mut file = File::open(("./src/posts/".to_string() + &title.to_string() + ".md").as_str()).unwrap();
 	let mut buffer = String::new();
 	file.read_to_string(&mut buffer).unwrap();
 

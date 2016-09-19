@@ -33,9 +33,10 @@ pub fn home(_: &mut Request) -> IronResult<Response> {
 		let path = dir_entry.path();
 		let file_name = path.file_name().unwrap().to_str().unwrap();
 
-		let v: Vec<&str> = file_name.split(".md").collect();
-
-		mv.push(v[0].to_string());
+		if path.is_dir() == false && file_name.contains(".md") {
+			let v: Vec<&str> = file_name.split(".md").collect();
+			mv.push(v[0].to_string());
+		}
 	}
 
 	let posts = Posts {
