@@ -1,11 +1,15 @@
 <html>
   <head>
     <title>test</title>
-  	<link rel="stylesheet" type="text/css" href="/static/style.css" />
   </head>
   <body>
-    <div class="home-img-back"></div>
-    <div class="home-img-mid"></div>
-    <div class="home-img-front"></div>
+    home
+    {{#each list}}
+        <li>
+          <a href="/post/{{this}}">
+            {{this}}
+          </a>
+        </li>
+    {{/each}}
   </body>
 </html>

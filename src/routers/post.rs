@@ -34,12 +34,14 @@ impl ToJson for Post {
 pub fn post(req: &mut Request) -> IronResult<Response> {
 	let id = req.extensions.get::<Router>().unwrap().find("id").unwrap_or("/");
 
+	// 读取markdown文件
 	let suffix = ".md".to_string();
 	let file_name = id.to_string() + &suffix;
 	let mut file = File::open("./src/posts/".to_string() + &file_name).unwrap();
 	let mut buffer = String::new();
 	file.read_to_string(&mut buffer).unwrap();
 
+	// 解析markdown文件
 	let doc = Markdown::new(buffer.to_string().as_str());
   let mut html = Html::new(html::Flags::empty(), 0);
 	let res = html.render(&doc);
