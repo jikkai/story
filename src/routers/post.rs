@@ -7,7 +7,7 @@ extern crate handlebars_iron as hbs;
 
 use std::collections::BTreeMap;
 use std::io::prelude::*;
-use std::fs::{ File };
+use std::fs::File;
 
 use self::iron::prelude::*;
 use self::iron::status;

@@ -35,7 +35,8 @@ pub fn server() {
 
 	// 设置路由
 	let mut router = Router::new();
-	router.get("/", routers::home::home, "home");
+	router.get("/", routers::home::home, "index");
+	router.get("/:page", routers::home::home, "home");
 	router.get("/posts/:id", routers::post::post, "posts");
 
 	// 设置静态文件
