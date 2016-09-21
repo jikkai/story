@@ -1,7 +1,12 @@
 {{> partial/head}}
 
   <main class="e-main">
-    {{{content}}}
+    <section class="typo">
+      <h2>{{title}}</h2>
+      <time>{{date}}</time>
+      <p>{{tags}}</p>
+      {{{content}}}
+    </section>
   </main>
 
 {{> partial/footer}}

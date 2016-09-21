@@ -3,24 +3,16 @@
   <main class="e-main">
     <ul class="e-home-list">
       {{#each list}}
-          <li>
-            <a href="/posts/{{this.title}}">
-              <h3>{{{this.title}}}</h3>
-              <time>{{{this.date}}}</time>
-            </a>
-          </li>
-      {{/each}}
-    </ul>
-    共 {{count}} 篇文章
-
-    <ul class="e-home-pagination">
-      {{#each page}}
         <li>
-          <a href="/{{this}}">{{this}}</a>
+          <a href="/posts/{{this.title}}">
+            <h3>{{{this.title}}}</h3>
+          </a>
+          <time>{{{this.date}}}</time>
         </li>
       {{/each}}
     </ul>
-    
+
+    {{> partial/pagination}}
   </main>
 
 {{> partial/footer}}
