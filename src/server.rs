@@ -49,5 +49,5 @@ pub fn server() {
 	chain.link_after(hbse);
   chain.link_after(routers::error::Error404);
 
-	Iron::new(chain).http("localhost:4000").unwrap();
+	Iron::new(chain).http("0.0.0.0:4000").unwrap();
 }
